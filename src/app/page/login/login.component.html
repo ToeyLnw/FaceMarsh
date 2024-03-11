@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>User Login</h2>
+        <div class="form-group">
+            <label for="username">Email:</label>
+            <input [(ngModel)]="email" type="text" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input [(ngModel)]="password" type="password" />
+        </div>
+        <button class="btn" (click)="login()">Login</button>
+        <h4>ยังไม่มีบัญชีหรอ <a routerLink="/register">Sign up</a> เลย!!</h4>
+    </div>
+
+</body>
+
+</html>
+
+<!-- <p>login works!</p>
+<mat-card>
+    <mat-card-header>
+        <h2>Login to server</h2>
+    </mat-card-header>
+    <mat-card-actions>
+        <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput [(ngModel)]="email" type="text"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>password</mat-label>
+            <input matInput [(ngModel)]="password" type="password"/>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+    </mat-card-actions>
+    <h3>ยังไม่มีบัญชีหรอ <a routerLink="/register">Sign up</a> เลย!!</h3>
+</mat-card>
+
+<div *ngFor="let us of user">
+    <h2>{{us.fname}}</h2>    
+</div> -->

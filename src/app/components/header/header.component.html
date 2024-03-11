@@ -1,0 +1,31 @@
+<mat-toolbar style="
+background-color: rgb(31, 31, 31);
+color: white;
+padding: 40px 20px;
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+">
+<div style="
+display: flex;
+flex-direction: row;"
+>
+
+    <img mat-card-image width="50px" src="https://i.pinimg.com/originals/73/cf/14/73cf142f26657abe09d9d42761f39ab2.jpg">
+    <h1 style="padding-top: 10px; font-size: 25px;">FaceMarsh</h1>
+</div>
+    <div class="button-row" style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ">
+        <button mat-button style="color: white;" routerLink="/main">หน้าหลัก</button>
+        <button mat-button routerLink="/profile">โปรไฟล์</button>
+        <button mat-button routerLink="/login">เข้าสู่ระบบ</button>
+        <button mat-button routerLink="/login">ออกจากระบบ</button>
+    </div>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

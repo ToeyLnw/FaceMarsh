@@ -1,0 +1,47 @@
+<html>
+    <body>
+        <div style="width: 100%; 
+display: flex;
+align-items: center;
+justify-content: center;
+padding-top: -100px;
+flex-direction: column;
+">
+    <div style="width: 70%;">
+        <h2 style="color: white;">Ranking</h2>
+        <div style=" display: flex; flex-direction: column;">
+            <div *ngFor="let pic of pics" style="padding-left: 10px; ">
+                <mat-card style="width: auto; padding-bottom: 20px; background-color: #444;">
+                    <mat-card-header>
+                        <img mat-card-image src="{{pic.image}}"
+                            style="height: 300px; max-width: 400px; border-radius: 50%;">
+                    <mat-card-content>
+                        <h1>{{pic.fname}} {{pic.lname}}</h1>
+                        <h3>point : {{pic.point}}</h3> 
+                        {{pic.description}}<br><br>
+                        <button mat-raised-button color="warn">ดูเพิ่มเติม</button>
+                    </mat-card-content>
+                    </mat-card-header>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <!-- <div style="width: 70%; padding: 100px 0">
+        <h2>ตัวละครใหม่ล่าสุด</h2>
+        <div style=" display: flex; flex-direction: row; overflow: auto;">
+            <div *ngFor="let pp of actors" style="padding-left: 10px;">
+                <a routerLink="/people" [queryParams]="{id: pp.AID}">
+                <mat-card class="roundedImg" style="width: 200px; height: 250px;">
+                    <img mat-card-image src="{{ pp.image }}" style="height: 150px;">
+                    <mat-card-content>
+                        <h3>{{ pp.fname }} {{ pp.lname }}</h3>
+                        <p>age = {{ pp.age }}</p>
+                    </mat-card-content>
+                </mat-card>
+                </a>
+            </div>
+        </div>
+    </div> -->
+</div>
+    </body>
+</html>

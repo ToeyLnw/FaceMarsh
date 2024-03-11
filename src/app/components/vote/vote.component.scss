@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    //background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    // margin-top: -1350px;
+    
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    width: 100%;
+}
+
+.image-vote {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 10px;
+    transition: transform 0.3s ease;
+    position: relative;
+    width: calc(50% - 20px);
+    flex-shrink: 0;
+}
+
+.image-vote:hover {
+    transform: translateY(-5px);
+}
+
+.image-vote img {
+    width: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0;
+    height: 300px; /* ปรับความสูงของรูปภาพตามต้องการ */
+    object-fit: cover;
+}
+
+.image-vote .info {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.image-vote .info h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.image-vote .info p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.vote-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.vote-button:hover {
+    background-color: #45a049;
+}
+
+.vote-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.image-vote:hover .vote-overlay {
+    opacity: 1;
+}
+
+.vote-text {
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.image-details {
+    display: none;
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    overflow-y: auto;
+    max-height: 80%;
+}
+
+.image-details.show {
+    display: block;
+}
+
+app-header {
+    margin-bottom: 20; /* เพิ่มระยะห่างด้านล่างของ Header */
+}

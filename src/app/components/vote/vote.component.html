@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<app-header></app-header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h1>Vote for your Favorite Character</h1>
+        <div *ngFor="let pic of pics; let i = index" class="image-vote">
+            <h2>{{pic.fname}} {{pic.lname}}</h2>
+            <img src="{{pic.image}}" alt="picture">
+            <div class="info">
+                <h2>{{pic.fname}} {{pic.lname}}</h2>
+                <p>
+                    <!-- {{pic.description}} -->
+                </p>
+            </div>
+            <div class="vote-overlay">
+                
+                <button mat-raised-button color="primary" (click)="vote(i)"><div class="vote-text">Vote for Character</div></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- vote works
+<div *ngFor="let pic of pics">
+    {{pic.fname}}
+    <img src="{{pic.image}}" height="300px" alt="picture">
+    <button mat-raised-button color="primary" (click)="vote(true)">Vote Picture 1</button>
+</div>
+<button mat-raised-button color="primary" (click)="vote(false)">Vote Picture 2</button> -->

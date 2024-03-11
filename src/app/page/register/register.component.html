@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="register" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <h1>New Account</h1>
+        <label for="username">ชื่อผู้ใช้: <span style="color: gray;">*required</span></label>
+        <input [(ngModel)]="fname" type="text" id="username" name="username"><br>
+
+        <label for="username">นามสกุล:</label>
+        <input [(ngModel)]="lname" type="text" id="lastname" name="lastname"><br>
+
+        <label for="email">อีเมล: <span style="color: gray;">*required</span></label>
+        <input [(ngModel)]="email" type="email" id="email" name="email"><br>
+
+        <label for="password">รหัสผ่าน: <span style="color: gray;">*required</span></label>
+        <input [(ngModel)]="password" type="password" id="password" name="password"><br>
+
+        <label for="profile_pic">รูปโปรไฟล์: </label>
+        <input [(ngModel)]="img" type="file" id="profile_pic" name="profile_pic"><br><br> <!-- เพิ่มช่อง "รูปโปรไฟล์" -->
+
+        <button mat-raised-button color="primary" (click)="register()">สมัครสมาชิก</button>
+        <h3>มีบัญชีแล้วหรือไม่ <a style="color: blue; text-decoration: underline;" routerLink="/login">login</a></h3>
+        <div *ngIf="areFieldsInvalid()" style="color: red;">กรุณาใส่ข้อมูลที่ต้องการให้ครบ</div>
+    </div>
+</body>
+
+</html>
+<!-- <p>register works!</p>
+<mat-card>
+    <mat-card-header>
+        <h2>สมัครสมาชิก</h2>
+    </mat-card-header>
+    <mat-card-actions>
+        <mat-form-field appearance="outline">
+            <mat-label>ชื่อผู้ใช้</mat-label>
+            <input matInput [(ngModel)]="fname" type="text"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>นามสกุล</mat-label>
+            <input matInput [(ngModel)]="lname" type="text"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>รูปภาพ URL (demo)</mat-label>
+            <input matInput [(ngModel)]="img" type="text"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput [(ngModel)]="email" type="text"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>password</mat-label>
+            <input matInput [(ngModel)]="password" type="password"/>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="register()">Sign UP</button>
+    </mat-card-actions>
+    <h3>มีบัญชียังครับอ้าย <a style="color: blue; text-decoration: underline;" routerLink="/login">login</a></h3>
+</mat-card> -->
