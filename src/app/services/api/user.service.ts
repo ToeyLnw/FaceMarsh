@@ -85,7 +85,6 @@ export class UserService {
           // Store user data in local storage
           localStorage.setItem('currentUser', JSON.stringify(response[0]));
         }
-    
         return response;
       }
 

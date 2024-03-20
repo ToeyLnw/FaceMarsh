@@ -1,0 +1,83 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* เปลี่ยนเป็นสีดำ */
+    color: #fff; /* เปลี่ยนเป็นสีข้อความขาว */
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.ranking-wrapper {
+    width: 70%;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card {
+    background-color: #555;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.card-image {
+    height: 300px; /* ปรับความสูงให้เท่ากันทุกรูป */
+    width: 300px; /* ปรับความกว้างให้เท่ากันทุกรูป */
+    object-fit: cover; /* ปรับขนาดรูปภาพเพื่อให้เต็มกรอบ */
+    object-position: center; /* กำหนดตำแหน่งของรูปภาพให้อยู่กึ่งกลาง */
+    border-radius: 50%; /* ให้มีรูปร่างเป็นวงกลม */
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.card-content h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.card-content p {
+    margin-bottom: 20px;
+}
+
+.card-content button {
+    margin-top: 20px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-content button:hover {
+    background-color: #FF4F40;
+}
