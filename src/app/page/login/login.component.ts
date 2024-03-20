@@ -31,11 +31,12 @@ export class LoginComponent {
   async login() {
     // console.log("clicked");
     // console.log(this.email+this.password);
+    //เช็ค login พร้อมเก็บข้อมูลลงใน local
     this.user = await this.userService.loginCheck(this.email, this.password);
-    console.log(this.user);
+    // console.log(this.user);
     
     if(Array.isArray(this.user) && this.user.length != 0){
-      this.userService.setUID(this.user);
+      // this.userService.setuser(this.user);
       this.router.navigate(['/']);
     }else{
       this.check = false;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/api/user.service';
+// import { User, UserService } from '../../services/api/user.service';
 import { VoteComponent } from '../../components/vote/vote.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { UserGetRespons } from '../../model/user-get-res';
@@ -21,30 +22,23 @@ export class MainComponent {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.user = this.userService.getUID();
-    this.userService.setUID(this.user);
+
+    this.user = this.userService.getCurrentUser();
+    console.log(this.user);
+    //this.userService.setUID(this.user);
   }
 
-  // setUser() {
-  //   let users = [];
-  //   if(sessionStorage.getItem('users')){
-  //     users = JSON.parse(sessionStorage.getItem('users')!);
-  //   }
-  //   let user = new User();
-  //   for (const us of this.user){
-  //     user.UID = us.UID;
-  //     user.fname = us.fname;
-  //     user.lname = us.lname;
-  //     user.email = us.email;
-  //     user.password = us.password;
-  //     user.profile = us.profile;
-  //     user.type = us.type;
-  //     user.limit_upload = us.limit_upload;
-  //   }
-  //   users.push(user);
-  //   sessionStorage.setItem('users', JSON.stringify(users));
-
-  //   console.log(sessionStorage.getItem('users'));
+  // ngOnInit(): void {
+  //   // Fetch data from the database
+  //   this.userService.getData().subscribe(
+  //     (data: any) => {
+  //       // Once data is fetched, store it in local storage
+  //       localStorage.setItem('databaseData', JSON.stringify(data));
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching data from database:', error);
+  //     }
+  //   );
   // }
 
 }

@@ -19,7 +19,7 @@ flex-direction: column;
                         <h1>{{pic.fname}} {{pic.lname}}</h1>
                         <h3>point : {{pic.point}}</h3> 
                         {{pic.description}}<br><br>
-                        <button mat-raised-button color="warn">ดูเพิ่มเติม</button>
+                        <button mat-raised-button color="warn" routerLink="/picture/{{pic.PID}}">ดูเพิ่มเติม</button>
                     </mat-card-content>
                     </mat-card-header>
                 </mat-card>

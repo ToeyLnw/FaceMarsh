@@ -4,11 +4,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { UserService } from '../../services/api/user.service';
 import { Router } from '@angular/router';
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-ranking',
   standalone: true,
-  imports: [MatCardModule,CommonModule, MatButtonModule],
+  imports: [MatCardModule,CommonModule, MatButtonModule,RouterLink],
   templateUrl: './ranking.component.html',
   styleUrl: './ranking.component.scss'
 })

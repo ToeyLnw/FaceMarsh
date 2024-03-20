@@ -1,57 +1,46 @@
 body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .header {
-    background-color: #4CAF50;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    width: 70px; /* ปรับขนาดของรูปภาพตามต้องการ */
-    height: auto; /* รักษาอัตราส่วนของรูปภาพ */
-    margin-right: 10px; /* ให้ระยะห่างระหว่างรูปภาพกับข้อความ */
-  }
-  
-  .logo-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0;
-  }
-  
-  .nav-links {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-links button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 15px;
-    transition: color 0.3s ease;
-    padding: 10px 15px;
-    border-radius: 5px;
-  }
-  
-  .nav-links button:hover {
-    color: #f8f8f8;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.nav-links button:hover {
+  color: #f8f8f8;
+  background-color: rgba(255, 255, 255, 0.1);
+}

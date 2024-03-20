@@ -69,6 +69,9 @@ export class VoteComponent {
     await this.picService.updatePoint(this.pid[1],Ra);
     await this.picService.updatePoint(this.pid[2],Rb);
 
+    await this.picService.updatePointHistory(this.pid[1],Ra);
+    await this.picService.updatePointHistory(this.pid[2],Rb);
+
     alert("vote success!");
     window.location.reload();
     // this.router.navigate(['/']);

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="th">
+<app-header></app-header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <div *ngIf="pic" class="profile">
+      <img [src]="pic.image" alt="Profile Image">
+      <div class="profile-info">
+        <h2>ชื่อตัวละคร: {{ pic.fname }} {{ pic.lname }}</h2>
+        <p>ข้อมูล: {{pic.description}}</p>
+      </div>
+    </div>
+    <div class="bar-container">
+      <div class="bar-graph">
+        <!-- ถ้าไม่มีข้อมูลใน history ให้แสดงข้อความว่า "ไม่มีข้อมูล" -->
+        <div *ngIf="!history || history.length === 0" class="no-data">ไม่มีข้อมูล</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>&copy; 2024 โปรไฟล์ตัวละคร</p>
+  </div>
+</body>
+
+</html>
