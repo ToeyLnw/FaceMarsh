@@ -28,8 +28,10 @@ export class UserService {
     //     return this.uid;
     // }
 
-    async getUserProfile() {
-        const url = this.constants.API_ENDPOINT + 'login/1';
+    async getUserProfile(id: number) {
+        const url = this.constants.API_ENDPOINT + 'login/'+id;
+        console.log("heeeyaaa");
+        
         try {
             const response = await lastValueFrom(this.http.get(url));
             return response as UserGetRespons[];
@@ -93,7 +95,6 @@ export class UserService {
         const userData = localStorage.getItem('currentUser');
         return userData ? JSON.parse(userData) : null;
       }
-      
     //   getCurrentUser(): UserGetRespons | null {
     //     const userData = localStorage.getItem('currentUser');
     //     if (userData) {
@@ -118,6 +119,24 @@ export class UserService {
         );
         return response as UserGetRespons[];
     }
+
+    public async addNewPic(owner: number, fname: string, lname: string, img: string, description: string) {
+        // point will always start at 1000
+        let point = 1000;
+        // (`madeBy`, `fname`, `lname`, `image`, `description`, `point`) 
+
+        const body = {
+            madeBy: owner,
+            fname: fname,
+            lname: lname,
+            image: img,
+            description: description,
+            point: point
+        };
+        const url = this.constants.API_ENDPOINT + 'collection/insert';
+        const response = await lastValueFrom(this.http.post(url, body));
+        return response as UserGetRespons[];
+      }
 
     public async randomToFight() {
         const url = this.constants.API_ENDPOINT + 'collection/random';

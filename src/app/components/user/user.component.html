@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- <div *ngIf="pic" class="profile">
+        <img [src]="pic.image" alt="Profile Image">
+        <div class="profile-info">
+          <h2>ชื่อตัวละคร: {{ pic.fname }} {{ pic.lname }}</h2>
+          <p>ข้อมูล: {{pic.description}}</p>
+        </div>
+      </div> -->
+    <div *ngIf="userProfile" class="container">
+        <div class="profile">
+          <!-- <h2><img [src]="userProfile.profile"></h2> -->
+          <div class="profile-info">
+            <h2>ผู้ใช้</h2>
+            <p>ชื่อผู้ใช้: {{ userProfile.fname }}</p>
+            <p>นามสกุล: {{ userProfile.lname }}</p>
+            <p>อีเมล: {{ userProfile.email }}</p>
+    <div style="color: black;">
+        id: {{ id }} (Type: {{ getType(id) }})
+        userProfile.UID: {{ userProfile.UID }} (Type: {{ getType(userProfile.UID) }})
+    </div>
+        </div>
+        <div ngIf="id === userProfile.UID">
+            <p>fix</p>
+        </div>        
+        </div>
+      </div>
+</body>
+
+</html>
