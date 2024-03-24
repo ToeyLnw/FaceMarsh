@@ -15,7 +15,7 @@
       </div> -->
     <div *ngIf="userProfile" class="container">
         <div class="profile">
-          <!-- <h2><img [src]="userProfile.profile"></h2> -->
+          <h2><img [src]="userProfile.profile"></h2>
           <div class="profile-info">
             <h2>ผู้ใช้</h2>
             <p>ชื่อผู้ใช้: {{ userProfile.fname }}</p>
@@ -26,9 +26,9 @@
         userProfile.UID: {{ userProfile.UID }} (Type: {{ getType(userProfile.UID) }})
     </div>
         </div>
-        <div ngIf="id === userProfile.UID">
+        <!-- <div ngIf="id === userProfile.UID">
             <p>fix</p>
-        </div>        
+        </div>         -->
         </div>
       </div>
 </body>

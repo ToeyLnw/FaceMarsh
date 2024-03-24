@@ -120,6 +120,21 @@ export class UserService {
         return response as UserGetRespons[];
     }
 
+    public async uploadFile(img :File) {
+        const url = this.constants.API_ENDPOINT + 'upload';
+        try{
+        const formData = new FormData();
+        formData.append('file', img);
+        const response = await lastValueFrom(
+            this.http.post(url, formData)
+        );
+        return response;
+        }catch (error) {
+      console.error('Error naa', error);
+      throw error; // Handle error as needed
+    }
+    }
+
     public async addNewPic(owner: number, fname: string, lname: string, img: string, description: string) {
         // point will always start at 1000
         let point = 1000;

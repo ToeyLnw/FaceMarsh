@@ -22,7 +22,9 @@
         <input [(ngModel)]="password" type="password" id="password" name="password"><br>
 
         <label for="profile_pic">รูปโปรไฟล์: </label>
-        <input [(ngModel)]="img" type="file" id="profile_pic" name="profile_pic"><br><br> <!-- เพิ่มช่อง "รูปโปรไฟล์" -->
+        <input type="file" id="profile_pic" name="profile_pic" accept="image/*" (change)="onFileSelected(fileInput.files)" #fileInput><br><br> <!-- เพิ่มช่อง "รูปโปรไฟล์" -->
+
+        <!-- <input type="file" name="file" accept="image/*" style="display: none;" #fileInput (change)="onFileSelected(fileInput.files)"> -->
 
         <button mat-raised-button color="primary" (click)="register()">สมัครสมาชิก</button>
         <h3>มีบัญชีแล้วหรือไม่ <a style="color: blue; text-decoration: underline;" routerLink="/login">login</a></h3>
