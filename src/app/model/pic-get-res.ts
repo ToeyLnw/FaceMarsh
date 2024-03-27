@@ -7,4 +7,6 @@ export interface PictureGetResponse {
     description: string;
     category:    null;
     point:       number;
+    ranking1:    number;
+    ranking2:    number;
 }

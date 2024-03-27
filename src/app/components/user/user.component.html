@@ -21,14 +21,10 @@
             <p>ชื่อผู้ใช้: {{ userProfile.fname }}</p>
             <p>นามสกุล: {{ userProfile.lname }}</p>
             <p>อีเมล: {{ userProfile.email }}</p>
-    <div style="color: black;">
-        id: {{ id }} (Type: {{ getType(id) }})
-        userProfile.UID: {{ userProfile.UID }} (Type: {{ getType(userProfile.UID) }})
-    </div>
         </div>
-        <!-- <div ngIf="id === userProfile.UID">
-            <p>fix</p>
-        </div>         -->
+        <div *ngIf="id === userProfile.UID">
+            <button> แก้ไข</button>
+        </div>        
         </div>
       </div>
 </body>

@@ -13,9 +13,11 @@
         <div class="ranking-wrapper">
             <h2>Ranking</h2>
             <div class="card-container">
-                <div class="card" *ngFor="let pic of pics">
+                <div class="card" *ngFor="let pic of pics; let i = index">
                     <div class="card-header">
+                        <h2>อันดับ: {{pic.ranking1}}</h2>
                         <img class="card-image" src="{{pic.image}}">
+                        <h2>{{rank[i]}}</h2>
                     </div>
                     <div class="card-content">
                         <h1>{{pic.fname}} {{pic.lname}}</h1>

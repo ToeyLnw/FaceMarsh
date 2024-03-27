@@ -15,6 +15,7 @@ export class UserComponent {
   user: any;
   userProfile: any;
   id: any;
+  own : boolean = true;
   constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {

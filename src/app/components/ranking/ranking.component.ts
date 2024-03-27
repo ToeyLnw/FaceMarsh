@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
 })
 export class RankingComponent {
   pics : any ;
-
+  rank : any ;
   constructor(private picService:UserService, private router:Router){}
   
   ngOnInit(): void {
@@ -23,6 +23,17 @@ export class RankingComponent {
 
   async LoadDataAsync(){
     this.pics = await this.picService.getAllPics();
+
+    this.rank = [];
+    // loop rank1-rank2 collect in array na
+    for (const pic of this.pics) {
+      const i = this.pics.indexOf(pic); 
+      this.rank[i] = pic.ranking2 - pic.ranking1;
+      console.log(this.rank[i]);
+      // console.log(pic.ranking2);
+      
+  }
+  
     console.log(this.pics);
   }
 }

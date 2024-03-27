@@ -30,8 +30,6 @@ export class UserService {
 
     async getUserProfile(id: number) {
         const url = this.constants.API_ENDPOINT + 'login/'+id;
-        console.log("heeeyaaa");
-        
         try {
             const response = await lastValueFrom(this.http.get(url));
             return response as UserGetRespons[];
@@ -173,6 +171,7 @@ export class UserService {
     public async getAllPics() {
         const url = this.constants.API_ENDPOINT + 'collection/top';
         const response = await lastValueFrom(this.http.get(url));
+        
         return response as PictureGetResponse[];
     }
 }

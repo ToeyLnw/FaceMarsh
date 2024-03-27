@@ -24,9 +24,7 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.user = this.userService.getCurrentUser();
-    // console.log("data is "+this.userService.getUID());
-    
-    // this.userService.setUID(this.user);
+
   }
 
 }
