@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <h2>แก้ไขรูปภาพ</h2>
+        <form (ngSubmit)="updateProfile()" #updateForm="ngForm">
+            <label for="profile_pic">รูปโปรไฟล์: </label>
+        <input type="file" id="profile_pic" name="profile_pic" accept="image/*" (change)="onFileSelected(fileInput.files)" #fileInput><br><br> <!-- เพิ่มช่อง "รูปโปรไฟล์" -->
+            <button type="submit" class="btn btn-primary" [disabled]="!updateForm.valid">บันทึกการเปลี่ยนแปลง</button>
+        </form>
+    </div>
+</body>
+
+</html>

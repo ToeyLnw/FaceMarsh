@@ -14,25 +14,40 @@ import { UserDataComponent } from './page/admin/userData/user.component';
 import { NameComponent } from './page/user-edit/name/name.component';
 import { FileComponent } from './page/user-edit/file/file.component';
 import { PasswordComponent } from './page/user-edit/password/password.component';
+import { AddComponent } from './page/page-pic/add/add.component';
+import { PagePicComponent } from './page/page-pic/page-pic.component';
+import { EditPicComponent } from './page/page-pic/edit-pic/edit-pic.component';
+import { PFileComponent } from './page/page-pic/pfile/pfile.component';
 
 export const routes: Routes = [
-    {path : 'login', component : LoginComponent},
-    {path : 'register', component : RegisterComponent},
-    {path : '', component: MainComponent},
-    {path : 'vote' , component: VoteComponent},
-    {path : 'show/:id', component : ShowComponent},
-    {path : 'profile/:id', component: ProfileComponent},
-    {path : 'edit', component: UserEditComponent,
-    children: [
-        {path : 'name', component : NameComponent},
-        {path : 'file', component : FileComponent},
-        {path : 'password', component : PasswordComponent}
-    ]
-},
-    {path : 'admin', component : AdminComponent,
-    children: [
-        {path : 'setting', component : SettingComponent},
-        {path : 'pic', component : PicComponent},
-        {path : 'user', component : UserDataComponent}
-    ]},
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: '', component: MainComponent },
+    { path: 'vote', component: VoteComponent },
+    { path: 'show/:id', component: ShowComponent },
+    { path: 'profile/:id', component: ProfileComponent },
+    {
+        path: 'edit', component: UserEditComponent,
+        children: [
+            { path: 'name', component: NameComponent },
+            { path: 'file', component: FileComponent },
+            { path: 'password', component: PasswordComponent }
+        ]
+    },
+    {
+        path: 'admin', component: AdminComponent,
+        children: [
+            { path: 'setting', component: SettingComponent },
+            { path: 'pic', component: PicComponent },
+            { path: 'user', component: UserDataComponent }
+        ]
+    },
+    {
+        path: 'pagepic', component: PagePicComponent,
+        children: [
+            { path: 'add', component: AddComponent },
+            { path: 'editpic/:id', component: EditPicComponent },
+            { path: 'file/:id', component: PFileComponent }
+        ]
+    }
 ];

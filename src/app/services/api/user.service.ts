@@ -144,6 +144,23 @@ export class UserService {
         return response as UserGetRespons[];
       }
 
+      public async updatePic(id: number, fname: string, lname: string,des: string, img: string){
+        const url = this.constants.API_ENDPOINT + 'collection/update/';
+        try {
+          const response = await lastValueFrom(this.http.put(url, {
+            PID: id,
+            fname: fname,
+            lname: lname,
+            description: des,
+            image: img
+          }));
+          return response;
+        } catch (error) {
+          console.error('เกิดข้อผิดพลาดในการอัปเดตโปรไฟล์:', error);
+          throw error; // ส่ง error ออกไปให้ caller จัดการต่อ
+        }
+      }
+
     public async randomToFight() {
         const url = this.constants.API_ENDPOINT + 'collection/random';
         const response = await lastValueFrom(this.http.get(url));

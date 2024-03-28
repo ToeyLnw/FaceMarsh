@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <h2>แก้ไขข้อมูลรูปภาพ</h2>
+        <form (ngSubmit)="updateProfile()" #updateForm="ngForm">
+            <div class="form-group">
+                <label for="fname">ชื่อ</label>
+                <input type="text" id="fname" name="fname" class="form-control" [(ngModel)]="fname" required>
+            </div>
+            <div class="form-group">
+                <label for="lname">นามสกุล</label>
+                <input type="text" id="lname" name="lname" class="form-control" [(ngModel)]="lname" required>
+            </div>
+            <div class="form-group">
+                <label for="des">คำอธิบายรูปภาพ</label>
+                <input type="text" id="des" name="des" class="form-control" [(ngModel)]="des" required>
+            </div>
+            <button mat-raised-button color="warn" (click)="file()">เปลี่ยนภาพโปรไฟล์</button>
+
+            <button type="submit" class="btn btn-primary" [disabled]="!updateForm.valid" (click)="updateProfile()">บันทึกการเปลี่ยนแปลง</button>
+        </form>
+    </div>
+</body>
+
+</html>
