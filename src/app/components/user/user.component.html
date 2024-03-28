@@ -23,7 +23,7 @@
             <p>อีเมล: {{ userProfile.email }}</p>
         </div>
         <div *ngIf="id === userProfile.UID">
-            <button> แก้ไข</button>
+            <button (click)="edit()"> แก้ไข</button>
         </div>        
         </div>
       </div>

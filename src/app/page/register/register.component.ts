@@ -56,7 +56,6 @@ export class RegisterComponent {
       if (fileToUpload) {
         this.img = fileToUpload;
         // this.uploadImage(fileToUpload);
-
       }
     }
   }

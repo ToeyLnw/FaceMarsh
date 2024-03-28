@@ -29,7 +29,7 @@ export class RankingComponent {
     for (const pic of this.pics) {
       const i = this.pics.indexOf(pic); 
       this.rank[i] = pic.ranking2 - pic.ranking1;
-      console.log(this.rank[i]);
+      // console.log(this.rank[i]);
       // console.log(pic.ranking2);
       
   }

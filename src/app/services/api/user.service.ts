@@ -17,21 +17,14 @@ export class UserService {
 
     private uid: any;
 
-    // setUID(data: any) {
-    //     this.uid = data;
-    //     // localStorage.setItem('uid', JSON.stringify(data));
-
-    // }
-
-    // getUID() {
-    //     // return localStorage.getItem('uid') || '';
-    //     return this.uid;
-    // }
-
     async getUserProfile(id: number) {
         const url = this.constants.API_ENDPOINT + 'login/'+id;
         try {
             const response = await lastValueFrom(this.http.get(url));
+            console.log("res:");
+            
+            console.log(response);
+            
             return response as UserGetRespons[];
         } catch (error) {
             console.error('เกิดข้อผิดพลาดในการดึงข้อมูลผู้ใช้:', error);
@@ -174,6 +167,36 @@ export class UserService {
         
         return response as PictureGetResponse[];
     }
+
+    async updateUserProfile(id: number, fname: string, lname: string, img: string, password: string): Promise<void> {
+        const url = this.constants.API_ENDPOINT + 'update/';
+        try {
+          const response = await lastValueFrom(this.http.put(url, {
+            UID: id,
+            fname: fname,
+            lname: lname,
+            profile: img,
+            password: password
+          }));
+          const user = await this.getUserProfile(id);
+        if (user) {
+            //update to database then update local storage too
+            localStorage.setItem('currentUser', JSON.stringify(user[0]));
+          }
+        } catch (error) {
+          console.error('เกิดข้อผิดพลาดในการอัปเดตโปรไฟล์:', error);
+          throw error; // ส่ง error ออกไปให้ caller จัดการต่อ
+        }
+      }
+
+      async getHashNewPass(id: number, oldPass: string, newPass: string){
+        
+
+        const url = this.constants.API_ENDPOINT + 'login/pw?uid='+id+
+        "&passO="+oldPass+"&passN="+newPass;
+        const response = await lastValueFrom(this.http.get(url));
+        return response;
+      }
 }
 
 //unused method maybe?
@@ -203,4 +226,7 @@ export class UserService {
 //       throw error; // Handle error as needed
 //     }
 //   }
+
+
+
 

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { UserService } from '../../services/api/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +16,8 @@ export class UserComponent {
   userProfile: any;
   id: any;
   own : boolean = true;
-  constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
+  constructor(private userService: UserService, private activatedRoute: ActivatedRoute,
+    private router : Router) { }
 
   ngOnInit(): void {
     const idGet = this.activatedRoute.snapshot.paramMap.get('id') || 0;
@@ -29,6 +30,10 @@ export class UserComponent {
   getType(variable: any): string {
     return typeof variable;
 }
+  edit(){
+    this.router.navigate(['/edit/name']);
+
+  }
 
   async loadUserProfile() {
     try {
