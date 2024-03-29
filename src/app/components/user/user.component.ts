@@ -32,7 +32,9 @@ export class UserComponent {
 }
   edit(){
     this.router.navigate(['/edit/name']);
-
+  }
+  add(){
+    this.router.navigate(['/pagepic/add']);
   }
 
   async loadUserProfile() {

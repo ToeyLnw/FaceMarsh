@@ -43,6 +43,18 @@ export class UserService {
         }
     }
 
+    async deletePic(pid: number,uid:number) {
+        const url = this.constants.API_ENDPOINT + 'collection/remove?pid='+pid
+        +"&uid="+uid;
+        try {
+            const response = await lastValueFrom(this.http.delete(url));
+            return response as PictureGetResponse[];
+        } catch (error) {
+            console.error('เกิดข้อผิดพลาดในการดึงข้อมูลผู้ใช้:', error);
+            throw error; // ส่ง error ออกไปให้ caller จัดการต่อ
+        }
+    }
+
     async getHistory(id: number) {
         const url = this.constants.API_ENDPOINT + 'collection/show/' + id;
         try {

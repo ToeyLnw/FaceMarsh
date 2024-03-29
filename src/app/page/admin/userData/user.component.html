@@ -1,1 +1,11 @@
-<p>userData works!</p>
+<button routerLink="/">Back</button>
+
+<div class="container">
+    <div class="user-card" *ngFor="let u of users" [routerLink]="['/profile', u.id]">
+        <img class="user-image" [src]="u.profile" alt="Profile Picture">
+        <div class="user-details">
+            <p class="user-name">ชื่อ: {{ u.fname }} {{ u.lname }}</p>
+            <p class="user-email">Email: {{ u.email }}</p>
+        </div>
+    </div>
+</div>

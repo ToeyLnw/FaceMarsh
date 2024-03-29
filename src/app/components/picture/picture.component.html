@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -12,6 +13,8 @@
       <div class="profile-info">
         <h2>ชื่อตัวละคร: {{ pic.fname }} {{ pic.lname }}</h2>
         <p>ข้อมูล: {{pic.description}}</p>
+        <button mat-flat-button color="primary" (click)="edit()">แก้ไขตัวละคร</button> <br><br>
+        <button mat-flat-button color="warn" (click)="delete()">ลบตัวละครนี้</button>
       </div>
     </div>
     <div class="bar-container">

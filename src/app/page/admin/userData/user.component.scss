@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบนของ container */
+}
+
+.user-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+}
+
+.user-image {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+    display: block; /* แสดงเป็นบล็อก */
+}
+
+.user-details {
+    margin-top: 20px;
+    text-align: center; /* จัดข้อมูลให้อยู่ตรงกลาง */
+}
+
+.user-name {
+    font-weight: bold;
+    color: #333333;
+}
+
+.user-email {
+    font-style: italic;
+    color: #666666;
+}
+
+button {
+    background-color: #4CAF50; /* เพิ่มสีพื้นหลังของปุ่ม */
+    border: none;
+    color: white; /* เปลี่ยนสีข้อความ */
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่างของปุ่ม */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* เปลี่ยนสีพื้นหลังของปุ่มเมื่อโฮเวอร์ */
+}

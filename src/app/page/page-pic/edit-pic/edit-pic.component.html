@@ -22,6 +22,7 @@
                 <label for="des">คำอธิบายรูปภาพ</label>
                 <input type="text" id="des" name="des" class="form-control" [(ngModel)]="des" required>
             </div>
+            
             <button mat-raised-button color="warn" (click)="file()">เปลี่ยนภาพโปรไฟล์</button>
 
             <button type="submit" class="btn btn-primary" [disabled]="!updateForm.valid" (click)="updateProfile()">บันทึกการเปลี่ยนแปลง</button>

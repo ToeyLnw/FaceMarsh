@@ -14,6 +14,10 @@ align-items: center;
     <h1 class="logo-text" style="font-size: 25px; margin: 0;">FaceMarsh</h1>
   </div>
 
+  <div *ngIf="user.type==1">
+    <button mat-raised-button color="warn" style="color: white;" routerLink="/admin/user">admin</button>
+
+  </div>
   <div *ngIf="user">
     <h2>you are: {{user.fname}}</h2>
     <!-- <img src="{{user.profile}}" alt=""> -->
