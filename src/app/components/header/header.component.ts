@@ -18,13 +18,27 @@ CommonModule
 })
 export class HeaderComponent {
 
-  user: any;
+  user: any = null;
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.user = this.userService.getCurrentUser();
-
+    this.user=this.userService.getCurrentUser();
+    // try {
+    //   const currentUser = this.userService.getCurrentUser();
+    //   if (currentUser !== null && currentUser !== undefined) {
+    //     this.user = currentUser;
+    //   } else {
+    //     console.error('getCurrentUser() returned null or undefined.');
+    //   }
+    // } catch (error) {
+    //   console.error('An error occurred while trying to get the current user:', error);
+    // }
+    
+    
   }
 
+  logOut(){
+    localStorage.removeItem("currentUser");
+  }
 }

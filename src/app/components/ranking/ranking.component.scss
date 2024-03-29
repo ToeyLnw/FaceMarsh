@@ -1,9 +1,8 @@
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000; /* เปลี่ยนเป็นสีดำ */
-    color: #fff; /* เปลี่ยนเป็นสีข้อความขาว */
+    background-color: #000;
+    color: #fff;
 }
 
 .container {
@@ -42,11 +41,11 @@ body {
 }
 
 .card-image {
-    height: 300px; /* ปรับความสูงให้เท่ากันทุกรูป */
-    width: 300px; /* ปรับความกว้างให้เท่ากันทุกรูป */
-    object-fit: cover; /* ปรับขนาดรูปภาพเพื่อให้เต็มกรอบ */
-    object-position: center; /* กำหนดตำแหน่งของรูปภาพให้อยู่กึ่งกลาง */
-    border-radius: 50%; /* ให้มีรูปร่างเป็นวงกลม */
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
 }
 
 .card-content {

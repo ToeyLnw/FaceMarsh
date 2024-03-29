@@ -14,7 +14,7 @@ align-items: center;
     <h1 class="logo-text" style="font-size: 25px; margin: 0;">FaceMarsh</h1>
   </div>
 
-  <div *ngIf="user.type==1">
+  <div *ngIf="user.type==1 && user">
     <button mat-raised-button color="warn" style="color: white;" routerLink="/admin/user">admin</button>
 
   </div>
@@ -25,12 +25,12 @@ align-items: center;
   <div class="nav-links">
     
     <button mat-button style="color: white;" routerLink="/">หน้าหลัก</button>
-    <!-- <button mat-button style="color: white;" routerLink="/profile/{{user.UID}}">โปรไฟล์</button> -->
+    <button mat-button style="color: white;" routerLink="/profile/{{user.UID}}">โปรไฟล์</button>
     <button mat-button style="color: white;" routerLink="/vote">โหวตตัวละคร</button>
 
     <div *ngIf="user; else elseBlock">
       <button mat-button style="color: white;" routerLink="/profile/{{user.UID}}">โปรไฟล์</button>
-        <button mat-button style="color: white;" routerLink="/login">ออกจากระบบ</button>
+        <button mat-button style="color: white;" routerLink="/login" (click)="logOut()">ออกจากระบบ</button>
     </div>
     <ng-template #elseBlock>
         <button mat-button style="color: white;" routerLink="/login">เข้าสู่ระบบ</button>

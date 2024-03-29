@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking</title>
+    <style>
+        /* CSS styles go here */
+    </style>
 </head>
 
 <body>
@@ -18,12 +20,14 @@
                         <h2>อันดับ: {{pic.ranking1}}</h2>
                         <img class="card-image" src="{{pic.image}}">
                         <h2>{{rank[i]}}</h2>
+                        
+
                     </div>
                     <div class="card-content">
                         <h1>{{pic.fname}} {{pic.lname}}</h1>
                         <h3>Point: {{pic.point}}</h3>
                         <p>{{pic.description}}</p>
-                        <button routerLink="show/{{pic.PID}}">ดูเพิ่มเติม</button>
+                        <button [routerLink]="'show/' + pic.PID">ดูเพิ่มเติม</button>
                     </div>
                 </div>
             </div>
